@@ -1,0 +1,26 @@
+{
+    "name": "kodeops/remd",
+    "type": "library",
+    "description": "REMD Api Wrapper for PHP",
+    "keywords": ["kodeops", "plugin", "remd", "utils"],
+    "homepage": "https://github.com/kodeops/remd",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xavier Hernández",
+            "email": "xavier.hernandez@kodeops.io",
+            "homepage": "https://kodeops.io"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "kodeops/rro": "^1.1",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kodeops\\remd\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
