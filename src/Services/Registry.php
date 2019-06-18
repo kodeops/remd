@@ -5,35 +5,27 @@ use kodeops\remd\Request;
 
 class Registry
 {
-    public $endpointho = 'https://registry-es.remd.tech';
-    public $search_params = [
-        'lat', 'lon', 'tipologia', 'superficie', 'antiguedad', 'tipoConsulta', 'idMunicipio'
-    ];
+    const ENDPOINT = 'https://registry-es.remd.tech/api/1';
+    const SERVICE = 'registry-es';
 
-    public static function search($lat, $lng, $params = [])
+    public static function valuate(array $params)
     {
-        $search = [];
-
-        if (!isset($params['lat'])) {
-            return error()
-                ->type('invalid_parameters')
-                ->message('The latitude is missing.');
-        }
-        $search['lat'] = $params['lat'];
-
-        if (!isset($params['lng'])) {
-            return error()
-                ->type('invalid_parameters')
-                ->message('The latitude is missing.');
-        }
-        $search['lng'] = $params['lng'];
-
-        $search_params = array_only($params, self::search_params);
-
         return Request::do(
-            self::$endpoint, 
+            self::SERVICE,
+            self::ENDPOINT . '/valuate', 
             'GET', 
-            $search_params
+            env('REMD_REGISTRY_KEY'),
+            $params
+        );
+    }
+
+    public static function queue(array $params)
+    {
+        return Request::do(
+            self::ENDPOINT . '/valuate/queue', 
+            'GET', 
+            env('REMD_REGISTRY_KEY'),
+            $params
         );
     }
 }
