@@ -2,6 +2,7 @@
 namespace kodeops\remd;
 
 use Exception;
+use GuzzleHttp;;
 
 class Request
 {
@@ -22,7 +23,7 @@ class Request
             break;
         }
 
-        $client = new \GuzzleHttp\Client();
+        $client = new GuzzleHttp\Client();
         try {
             $response = $client->request(
                 $method,
@@ -35,10 +36,34 @@ class Request
                     ]
                 ]
             );
-        } catch (Exception $e) {
+        } catch (GuzzleHttp\Exception\ConnectException $e) {
+            return error()
+                ->type('connect_exception')
+                ->message($e->getMessage());
+        } catch (GuzzleHttp\Exception\BadResponseException $e) {
+            $rro = rro(json_decode($e->getResponse()->getBody()->getContents()));
+
+            if ($rro) {
+                return $rro;
+            }
+            
+            return error()
+                ->type('bad_response_exception')
+                ->message(self::removeResponseContents($e->getMessage()))
+                ->code($e->getResponse()->getStatusCode())
+                ->data(['contents' => $e->getResponse()->getBody()->getContents()]);
+        } catch (GuzzleHttp\Exception\ServerException $e) {
+            return error()
+                ->type('server_exception')
+                ->message($e->getMessage());
+        } catch (GuzzleHttp\Exception\RequestException $e) {
             return error()
                 ->type('request_exception')
-                ->message('Could not complete request: ' . $e->getMessage());
+                ->message($e->getMessage());
+        } catch (Exception $e) {
+            return error()
+                ->type('unhandled_exception')
+                ->message($e->getMessage());
         }
 
         $rro = false;
@@ -60,5 +85,10 @@ class Request
     public static function defaultResponseMessage($service = 'unknown service')
     {
         return str_replace("__SERVICE__", $service, self::DEFAULT_RESPONSE_MESSAGE);
+    }
+
+    private static function removeResponseContents($message)
+    {
+        return explode(' response:', $message)[0];
     }
 }
