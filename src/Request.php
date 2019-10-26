@@ -22,9 +22,20 @@ class Request
             throw new Exception('remd is missing ' . $check_env_key . ' enviroment');
         }
 
+        $request_params = [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $authorization,
+                'User-Agent' => 'kodeops/remd',
+            ]
+        ];
+
         switch ($method) {
             case 'GET':
                 $endpoint .= '?' . http_build_query($params);
+            break;
+
+            case 'POST':
+                $request_params['form_params'] = $params;
             break;
         }
 
@@ -33,13 +44,7 @@ class Request
             $response = $client->request(
                 $method,
                 $endpoint,
-                [
-                    'headers' => [
-                        'Authorization' => 'Bearer ' . $authorization,
-                        'Content-Type' => 'application/json',
-                        'Accept' => 'application/json',
-                    ]
-                ]
+                $request_params
             );
         } catch (GuzzleHttp\Exception\ConnectException $e) {
             return error()
@@ -71,10 +76,11 @@ class Request
                 ->message($e->getMessage());
         }
 
-        $rro = false;
         $content = json_decode($response->getBody());
-        if (is_rro($content)) {
-            $rro = rro($content);
+        
+        $rro = rro($content);
+        if ($rro) {
+            return $rro;
         }
 
         return success()
