@@ -2,7 +2,7 @@
 namespace kodeops\remd;
 
 use Exception;
-use GuzzleHttp;;
+use GuzzleHttp;
 
 class Request
 {
@@ -17,6 +17,11 @@ class Request
         array $params = []  
     )
     {
+        $check_env_key = 'REMD_AW_' . $service . '_KEY';
+        if (!env($check_env_key)) {
+            throw new Exception('remd is missing ' . $check_env_key . ' enviroment');
+        }
+
         switch ($method) {
             case 'GET':
                 $endpoint .= '?' . http_build_query($params);
