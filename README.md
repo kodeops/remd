@@ -39,7 +39,8 @@ or regular call:
 ##  Available services and methods
 
 ### AVM
-Requires `REMD_AW_ATENEA_AVM_KEY` in `.env` environment file.
+
+Requires `REMD_AW_AVM_KEY` in `.env` environment file.
 
 `remd::api('AVM', 'asset', $params);`
 

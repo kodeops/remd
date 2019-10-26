@@ -6,7 +6,7 @@ use kodeops\remd\Request;
 class MarketData
 {
     const ENDPOINT = 'https://comparables.remd.tech/api';
-    const SERVICE = 'market-data';
+    const SERVICE = 'marketdata';
     const KEY = 'REMD_AW_MARKETDATA_KEY';
 
     public static function listings(array $params)

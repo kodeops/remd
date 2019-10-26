@@ -6,7 +6,7 @@ use kodeops\remd\Request;
 class Registry
 {
     const ENDPOINT = 'https://registry-es.remd.tech/api/1';
-    const SERVICE = 'registry-es';
+    const SERVICE = 'registry';
     const KEY = 'REMD_AW_REGISTRY_KEY';
 
     public static function valuate(array $params)

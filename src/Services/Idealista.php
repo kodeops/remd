@@ -7,7 +7,7 @@ class Idealista
 {
     const ENDPOINT = 'https://idealista.remd.tech/api';
     const SERVICE = 'idealista';
-    const KEY = 'REMD_AW_IDEALISTA_WRAPPER_KEY';
+    const KEY = 'REMD_AW_IDEALISTA_KEY';
 
     public static function search(array $params)
     {

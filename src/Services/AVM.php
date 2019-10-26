@@ -6,8 +6,8 @@ use kodeops\remd\Request;
 class AVM
 {
     const ENDPOINT = 'https://avm.atenea.cloud/api';
-    const SERVICE = 'atenea-avm';
-    const KEY = 'REMD_AW_ATENEA_AVM_KEY';
+    const SERVICE = 'avm';
+    const KEY = 'REMD_AW_AVM_KEY';
 
     public static function asset(array $params)
     {
