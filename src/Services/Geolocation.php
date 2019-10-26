@@ -7,6 +7,7 @@ class Geolocation
 {
     const ENDPOINT = 'https://geolocation.remd.tech/api';
     const SERVICE = 'geolocation';
+    const KEY = 'REMD_GEOLOCATION_KEY';
 
     public static function geocode(array $params)
     {
@@ -14,7 +15,7 @@ class Geolocation
             self::SERVICE,
             self::ENDPOINT . '/geocode', 
             'GET', 
-            env('REMD_GEOLOCATION_KEY'),
+            env(self::KEY),
             $params
         );
     }
@@ -25,7 +26,7 @@ class Geolocation
             self::SERVICE,
             self::ENDPOINT . '/reverse', 
             'GET', 
-            env('REMD_GEOLOCATION_KEY'),
+            env(self::KEY),
             $params
         );
     }

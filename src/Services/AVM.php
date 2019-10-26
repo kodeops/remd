@@ -7,6 +7,7 @@ class AVM
 {
     const ENDPOINT = 'https://avm.atenea.cloud/api';
     const SERVICE = 'atenea-avm';
+    const KEY = 'REMD_AW_ATENEA_AVM_KEY';
 
     public static function asset(array $params)
     {
@@ -14,7 +15,7 @@ class AVM
             self::SERVICE,
             self::ENDPOINT . '/v1/asset', 
             'POST', 
-            env('REMD_AW_ATENEA_AVM_KEY'),
+            env(self::KEY),
             $params
         );
     }

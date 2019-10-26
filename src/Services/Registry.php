@@ -7,6 +7,7 @@ class Registry
 {
     const ENDPOINT = 'https://registry-es.remd.tech/api/1';
     const SERVICE = 'registry-es';
+    const KEY = 'REMD_AW_REGISTRY_KEY';
 
     public static function valuate(array $params)
     {
@@ -14,7 +15,7 @@ class Registry
             self::SERVICE,
             self::ENDPOINT . '/valuate', 
             'GET', 
-            env('REMD_REGISTRY_KEY'),
+            env(self::KEY),
             $params
         );
     }
@@ -24,7 +25,7 @@ class Registry
         return Request::do(
             self::ENDPOINT . '/valuate/queue', 
             'GET', 
-            env('REMD_REGISTRY_KEY'),
+            env(self::KEY),
             $params
         );
     }

@@ -7,6 +7,7 @@ class MarketData
 {
     const ENDPOINT = 'https://comparables.remd.tech/api';
     const SERVICE = 'market-data';
+    const KEY = 'REMD_AW_MARKETDATA_KEY';
 
     public static function listings(array $params)
     {
@@ -14,7 +15,7 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/search', 
             'GET', 
-            env('REMD_MARKETDATA_KEY'),
+            env(self::KEY),
             $params
         );
     }
@@ -25,7 +26,7 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/user', 
             'GET', 
-            env('REMD_MARKETDATA_KEY')
+            env(self::KEY)
         );
     }
 
@@ -35,7 +36,7 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/export', 
             'GET', 
-            env('REMD_MARKETDATA_KEY'),
+            env(self::KEY)
             $params
         );
     }
@@ -46,7 +47,7 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/history', 
             'GET', 
-            env('REMD_MARKETDATA_KEY'),
+            env(self::KEY)
             $params
         );
     }
