@@ -7,7 +7,7 @@ class Geolocation
 {
     const ENDPOINT = 'https://geolocation.remd.tech/api';
     const SERVICE = 'geolocation';
-    const KEY = 'REMD_AW_GEOLOCATION_KEY';
+    const KEY = 'REMD_PAW_GEOLOCATION_KEY';
 
     public static function geocode(array $params)
     {

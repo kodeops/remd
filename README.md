@@ -30,7 +30,7 @@ Add class alias in `config/app.php`:
 
 Quick use through Facade:
 
-`remd::api($service, $method, $params);`
+`\remd::api($service, $method, $params);`
 
 or regular call:
 
@@ -40,7 +40,7 @@ or regular call:
 
 ### AVM
 
-Requires `REMD_AW_AVM_KEY` in `.env` environment file.
+Requires `REMD_PAW_ATENEA_AVM_KEY` in `.env` environment file.
 
 `remd::api('AVM', 'asset', $params);`
 
@@ -52,9 +52,15 @@ Requires `REMD_GEOLOCATION_KEY` in `.env` environment file.
 
 `remd::api('Geolocation', 'reverse', $params);`
 
+### Idealista
+
+Requires `REMD_PAW_IDEALISTA_KEY` in `.env` environment file.
+
+`remd::api('Idealista', 'search', $params);`
+
 ### Market Data
 
-Requires `REMD_AW_MARKETDATA_KEY` in `.env` environment file.
+Requires `REMD_PAW_MARKETDATA_KEY` in `.env` environment file.
 
 `remd::api('MarketData', 'listings', $params);`
 
@@ -68,14 +74,8 @@ Requires `REMD_AW_MARKETDATA_KEY` in `.env` environment file.
 
 ### Registry
 
-Requires `REMD_AW_REGISTRY_KEY` in `.env` environment file.
+Requires `REMD_PAW_REGISTRY_KEY` in `.env` environment file.
 
 `remd::api('Registry', 'valuate', $params);`
 
 `remd::api('Registry', 'queue', $params);`
-
-### Idealista
-
-Requires `REMD_AW_IDEALISTA_KEY` in `.env` environment file.
-
-`remd::api('Idealista', 'search', $params);`

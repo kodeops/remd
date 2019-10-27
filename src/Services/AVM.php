@@ -7,7 +7,7 @@ class AVM
 {
     const ENDPOINT = 'https://avm.atenea.cloud/api';
     const SERVICE = 'avm';
-    const KEY = 'REMD_AW_AVM_KEY';
+    const KEY = 'REMD_PAW_AVM_KEY';
 
     public static function asset(array $params)
     {
