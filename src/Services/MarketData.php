@@ -16,7 +16,11 @@ class MarketData
             self::ENDPOINT . '/search', 
             'GET', 
             env(self::KEY),
-            $params
+            $params,
+            [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ]
         );
     }
 
@@ -26,7 +30,12 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/user', 
             'GET', 
-            env(self::KEY)
+            env(self::KEY),
+            null,
+            [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ]
         );
     }
 
@@ -37,7 +46,11 @@ class MarketData
             self::ENDPOINT . '/export', 
             'GET', 
             env(self::KEY)
-            $params
+            $params,
+            [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ]
         );
     }
 
@@ -48,7 +61,11 @@ class MarketData
             self::ENDPOINT . '/history', 
             'GET', 
             env(self::KEY)
-            $params
+            $params,
+            [
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ]
         );
     }
 
