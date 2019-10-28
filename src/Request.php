@@ -14,7 +14,8 @@ class Request
         $endpoint, 
         $method, 
         $authorization, 
-        array $params = []  
+        array $params = []
+        $headers = null,
     )
     {
         $check_env_key = 'REMD_PAW_' . strtoupper($service) . '_KEY';
@@ -28,6 +29,10 @@ class Request
                 'User-Agent' => 'kodeops/remd',
             ]
         ];
+
+        if ($headers) {
+            $request_params['headers'] = array_merge($request_params['headers']);
+        }
 
         switch ($method) {
             case 'GET':
