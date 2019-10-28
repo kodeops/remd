@@ -14,8 +14,8 @@ class Request
         $endpoint, 
         $method, 
         $authorization, 
-        array $params = []
-        $headers = null,
+        array $params = [],
+        $headers = null
     )
     {
         $check_env_key = 'REMD_PAW_' . strtoupper($service) . '_KEY';
