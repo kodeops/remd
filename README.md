@@ -40,13 +40,19 @@ or regular call:
 
 ### AVM
 
+* Repository [aktualabsdev/atenea-avm-api](https://bitbucket.org/aktualabsdev/atenea-avm-api)
+* [API Documentation](https://bitbucket.org/aktualabsdev/atenea-avm-api/src/master/README.md)
+
 Requires `REMD_PAW_ATENEA_AVM_KEY` in `.env` environment file.
 
 `remd::api('AVM', 'asset', $params);`
 
 ### Geolocation
 
-Requires `REMD_GEOLOCATION_KEY` in `.env` environment file.
+* Repository [remdtech/geolocation](https://bitbucket.org/remdtech/geolocation)
+* [API Documentation](https://bitbucket.org/remdtech/geolocation/src/master/README.md)
+
+Requires `REMD_PAW_GEOLOCATION_KEY` in `.env` environment file.
 
 `remd::api('Geolocation', 'geocode', $params);`
 
@@ -54,11 +60,17 @@ Requires `REMD_GEOLOCATION_KEY` in `.env` environment file.
 
 ### Idealista
 
+* Repository [remdtech/idealista-api-wrapper](https://bitbucket.org/remdtech/idealista-api-wrapper)
+* [API Documentation](https://bitbucket.org/remdtech/idealista-api-wrapper/src/master/README.md)
+
 Requires `REMD_PAW_IDEALISTA_KEY` in `.env` environment file.
 
 `remd::api('Idealista', 'search', $params);`
 
 ### Market Data
+
+* Repository [remdtech/comparables-api](https://bitbucket.org/remdtech/comparables-api)
+* [API Documentation](https://bitbucket.org/remdtech/comparables-api/src/master/README.md)
 
 Requires `REMD_PAW_MARKETDATA_KEY` in `.env` environment file.
 
@@ -73,6 +85,9 @@ Requires `REMD_PAW_MARKETDATA_KEY` in `.env` environment file.
 `remd::api('MarketData', 'historyChart', $params);`
 
 ### Registry
+
+* Repository [remdtech/registry-es](https://bitbucket.org/remdtech/registry-es)
+* [API Documentation](https://bitbucket.org/remdtech/registry-es/src/master/README.md)
 
 Requires `REMD_PAW_REGISTRY_KEY` in `.env` environment file.
 
