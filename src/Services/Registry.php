@@ -23,6 +23,7 @@ class Registry
     public static function queue(array $params)
     {
         return Request::do(
+            self::SERVICE,
             self::ENDPOINT . '/valuate/queue', 
             'GET', 
             env(self::KEY),
