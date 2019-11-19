@@ -84,7 +84,7 @@ Requires `REMD_PAW_MARKETDATA_KEY` in `.env` environment file.
 
 `remd::api('MarketData', 'historyChart', $params);`
 
-### Registry
+### Registry (Spain)
 
 * Repository [remdtech/registry-es](https://bitbucket.org/remdtech/registry-es)
 * [API Documentation](https://bitbucket.org/remdtech/registry-es/src/master/README.md)
