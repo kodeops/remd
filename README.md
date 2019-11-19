@@ -95,7 +95,7 @@ Requires `REMD_PAW_REGISTRY_KEY` in `.env` environment file.
 
 `remd::api('Registry', 'queue', $params);`
 
-### Registry
+### Cadaster (Spain)
 
 * Repository [remdtech/cadaster-es](https://bitbucket.org/remdtech/cadaster-es)
 * [API Documentation](https://bitbucket.org/remdtech/cadaster-es/src/master/README.md)
