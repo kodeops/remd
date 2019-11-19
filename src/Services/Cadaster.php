@@ -15,7 +15,7 @@ class Cadaster
             self::SERVICE,
             self::ENDPOINT . '/1/reference/' . $reference, 
             'GET', 
-            env(self::KEY),
+            env(self::KEY)
         );
     }
 }
