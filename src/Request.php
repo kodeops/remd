@@ -31,7 +31,7 @@ class Request
         ];
 
         if ($headers) {
-            $request_params['headers'] = array_merge($request_params['headers']);
+            $request_params['headers'] = array_merge($request_params['headers'], $headers);
         }
 
         switch ($method) {
