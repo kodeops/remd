@@ -45,7 +45,7 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/export', 
             'GET', 
-            env(self::KEY)
+            env(self::KEY),
             $params,
             [
                 'Accept' => 'application/json',
@@ -60,7 +60,7 @@ class MarketData
             self::SERVICE,
             self::ENDPOINT . '/history', 
             'GET', 
-            env(self::KEY)
+            env(self::KEY),
             $params,
             [
                 'Accept' => 'application/json',
