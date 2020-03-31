@@ -103,3 +103,12 @@ Requires `REMD_PAW_REGISTRY_KEY` in `.env` environment file.
 Requires `REMD_PAW_CADASTER_KEY` in `.env` environment file.
 
 `remd::api('Cadaster', 'reference', $reference);`
+
+### Reference (Spain)
+
+* Repository [remdtech/reference-es](https://bitbucket.org/remdtech/reference-es)
+* [API Documentation](https://bitbucket.org/remdtech/reference-es/src/master/readme.md)
+
+Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
+
+`remd::api('Reference-Es', 'search', $params);`
