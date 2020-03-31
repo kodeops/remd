@@ -6,7 +6,7 @@ use kodeops\remd\Request;
 class ReferenceEs
 {
     const ENDPOINT = 'https://reference-es.remd.tech/api';
-    const SERVICE = 'reference-es';
+    const SERVICE = 'referencees';
     const KEY = 'REMD_PAW_REFERENCEES_KEY';
 
     public static function search(array $params)
