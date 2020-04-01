@@ -47,6 +47,12 @@ Requires `REMD_PAW_ATENEA_AVM_KEY` in `.env` environment file.
 
 `remd::api('AVM', 'asset', $params);`
 
+`remd::api('AVM', 'queue', $params);`
+
+Available methods for v2:
+
+`remd::api('AVM', 'value', $params);`
+
 ### Geolocation
 
 * Repository [remdtech/geolocation](https://bitbucket.org/remdtech/geolocation)

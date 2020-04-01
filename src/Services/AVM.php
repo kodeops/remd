@@ -19,4 +19,26 @@ class AVM
             $params
         );
     }
+
+    public static function queue(array $params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/v1/queue', 
+            'POST', 
+            env(self::KEY),
+            $params
+        );
+    }
+
+    public static function value(array $params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/v2/value', 
+            'POST', 
+            env(self::KEY),
+            $params
+        );
+    }
 }
