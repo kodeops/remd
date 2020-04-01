@@ -9,7 +9,7 @@ class Cadaster
     const SERVICE = 'cadaster';
     const KEY = 'REMD_PAW_CADASTER_KEY';
 
-    public static function remd($reference)
+    public static function reference($reference)
     {
         return Request::do(
             self::SERVICE,
