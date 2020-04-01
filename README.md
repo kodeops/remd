@@ -110,6 +110,8 @@ Requires `REMD_PAW_CADASTER_KEY` in `.env` environment file.
 
 `remd::api('Cadaster', 'reference', $reference);`
 
+`remd::api('Cadaster', 'ConsultaRCCOOR_Distancia', $reference);`
+
 ### Reference (Spain)
 
 * Repository [remdtech/reference-es](https://bitbucket.org/remdtech/reference-es)

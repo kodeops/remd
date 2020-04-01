@@ -18,4 +18,15 @@ class Cadaster
             env(self::KEY)
         );
     }
+
+    public static function ConsultaRCCOOR_Distancia($params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/1/direct/ConsultaRCCOOR_Distancia', 
+            'GET', 
+            env(self::KEY),
+            $params
+        );
+    }
 }
