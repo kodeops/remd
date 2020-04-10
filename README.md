@@ -40,8 +40,8 @@ or regular call:
 
 ### AVM
 
-* Repository [aktualabsdev/atenea-avm-api](https://bitbucket.org/aktualabsdev/atenea-avm-api)
-* [API Documentation](https://bitbucket.org/aktualabsdev/atenea-avm-api/src/master/README.md)
+* Repository [intrumlabs/atenea-avm-api](https://bitbucket.org/intrumlabs/atenea-avm-api)
+* [API Documentation](https://bitbucket.org/intrumlabs/atenea-avm-api/src/master/README.md)
 
 Requires `REMD_PAW_ATENEA_AVM_KEY` in `.env` environment file.
 
