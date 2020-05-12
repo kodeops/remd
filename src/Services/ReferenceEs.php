@@ -11,9 +11,22 @@ class ReferenceEs
 
     public static function search(array $params)
     {
+        $params = array_merge($params, ['rro' => 1]);
+
         return Request::do(
             self::SERVICE,
             self::ENDPOINT . '/search', 
+            'GET', 
+            env(self::KEY),
+            $params
+        );
+    }
+
+    public static function ine(array $params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/ine', 
             'GET', 
             env(self::KEY),
             $params
