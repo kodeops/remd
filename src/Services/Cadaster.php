@@ -19,6 +19,38 @@ class Cadaster
         );
     }
 
+    public static function queue($reference)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/1/direct/queue/' . $reference, 
+            'GET', 
+            env(self::KEY)
+        );
+    }
+
+    public static function BuscarParcelaGoogle($params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/1/direct/BuscarParcelaGoogle', 
+            'GET', 
+            env(self::KEY),
+            $params
+        );
+    }
+
+    public static function Consulta_DNPRC($params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::ENDPOINT . '/1/direct/Consulta_DNPRC', 
+            'GET', 
+            env(self::KEY),
+            $params
+        );
+    }
+
     public static function ConsultaRCCOOR_Distancia($params)
     {
         return Request::do(
