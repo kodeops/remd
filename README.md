@@ -120,3 +120,12 @@ Requires `REMD_PAW_CADASTER_KEY` in `.env` environment file.
 Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
 
 `remd::api('Reference-Es', 'search', $params);`
+
+### Static Street View
+
+* Repository [remdtech/reference-es](https://bitbucket.org/remdtech/static-street-view)
+* [API Documentation](https://bitbucket.org/remdtech/static-street-view/src/master/README.md)
+
+Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
+
+`remd::api('StaticStreetView', 'streetview', $params);`
