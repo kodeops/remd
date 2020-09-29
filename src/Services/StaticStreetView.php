@@ -14,7 +14,7 @@ class StaticStreetView
         return Request::do(
             self::SERVICE,
             self::ENDPOINT . '/streetview', 
-            'POST', 
+            'GET', 
             env(self::KEY),
             $params
         );
