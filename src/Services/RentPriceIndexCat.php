@@ -9,7 +9,7 @@ class RentPriceIndexCat
     const SERVICE = 'rpic';
     const KEY = 'REMD_PAW_RPIC_KEY';
 
-    public static function rpic(array $params)
+    public static function priceIndex(array $params)
     {
         return Request::do(
             self::SERVICE,

@@ -132,7 +132,7 @@ Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
 
 ### Rent Price Index Cat
 
-* Repository [remdtech/reference-es](https://bitbucket.org/remdtech/rent-price-index-cat)
+* Repository [remdtech/rent-price-index-cat](https://bitbucket.org/remdtech/rent-price-index-cat)
 * [API Documentation](https://bitbucket.org/remdtech/rent-price-index-cat/src/master/README.md)
 
 Requires `REMD_PAW_RPIC_KEY` in `.env` environment file.
