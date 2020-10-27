@@ -137,4 +137,4 @@ Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
 
 Requires `REMD_PAW_RPIC_KEY` in `.env` environment file.
 
-`remd::api('RentPriceIndexCat', 'priceIndex', $params);`
+`remd::api('RentPriceIndexCat', 'rentPriceIndex', $params);`
