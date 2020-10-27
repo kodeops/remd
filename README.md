@@ -129,3 +129,12 @@ Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
 Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
 
 `remd::api('StaticStreetView', 'streetview', $params);`
+
+### Rent Price Index Cat
+
+* Repository [remdtech/reference-es](https://bitbucket.org/remdtech/rent-price-index-cat)
+* [API Documentation](https://bitbucket.org/remdtech/rent-price-index-cat/src/master/README.md)
+
+Requires `REMD_PAW_RPIC_KEY` in `.env` environment file.
+
+`remd::api('RentPriceIndexCat', 'priceIndex', $params);`
