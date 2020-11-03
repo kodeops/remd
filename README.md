@@ -129,3 +129,12 @@ Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
 Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
 
 `remd::api('StaticStreetView', 'streetview', $params);`
+
+### POIs
+
+* Repository [remdtech/pois](https://bitbucket.org/remdtech/pois)
+* [API Documentation](https://bitbucket.org/remdtech/pois/src/master/README.md)
+
+Requires `REMD_PAW_POIS_KEY` in `.env` environment file.
+
+`remd::api('Pois', 'nearbyPoints', $params);`

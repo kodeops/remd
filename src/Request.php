@@ -27,6 +27,8 @@ class Request
             'headers' => [
                 'Authorization' => 'Bearer ' . $authorization,
                 'User-Agent' => 'kodeops/remd',
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/x-www-form-urlencoded',
             ]
         ];
 
