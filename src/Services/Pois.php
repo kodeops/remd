@@ -5,7 +5,7 @@ use kodeops\remd\Request;
 
 class Pois
 {
-    const ENDPOINT = 'https://pois.remd.tech/api/1';
+    const ENDPOINT = 'https://pois.remd.tech/api';
     const SERVICE = 'pois';
     const KEY = 'REMD_PAW_POIS_KEY';
 
