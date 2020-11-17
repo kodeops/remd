@@ -119,7 +119,7 @@ Requires `REMD_PAW_CADASTER_KEY` in `.env` environment file.
 
 Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
 
-`remd::api('Reference-Es', 'search', $params);`
+`remd::api('ReferenceEs', 'search', $params);`
 
 ### Static Street View
 
