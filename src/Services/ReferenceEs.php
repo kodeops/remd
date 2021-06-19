@@ -2,12 +2,17 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Static;
 
 class ReferenceEs
 {
-    const ENDPOINT = 'https://reference-es.remd.tech/api';
     const SERVICE = 'referencees';
-    const KEY = 'REMD_PAW_REFERENCEES_KEY';
+    const ENV_PREFIX = 'REMD_PAW_REFERENCEES';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function search(array $params)
     {
@@ -15,9 +20,9 @@ class ReferenceEs
 
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/search', 
+            self::serviceSetting('ENDPOINT') . '/search', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -26,9 +31,9 @@ class ReferenceEs
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/ine', 
+            self::serviceSetting('ENDPOINT') . '/ine', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

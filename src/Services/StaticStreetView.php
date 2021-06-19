@@ -5,17 +5,21 @@ use kodeops\remd\Request;
 
 class StaticStreetView
 {
-    const ENDPOINT = 'https://ssv.remd.tech/api';
     const SERVICE = 'ssv';
-    const KEY = 'REMD_PAW_SSV_KEY';
+    const ENV_PREFIX = 'REMD_PAW_SSV';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function streetview(array $params)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/streetview', 
+            self::serviceSetting('ENDPOINT') . '/streetview', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

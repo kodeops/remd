@@ -2,20 +2,25 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Static;
 
 class Cadaster
 {
-    const ENDPOINT = 'https://cadaster-es.remd.tech/api';
     const SERVICE = 'cadaster';
-    const KEY = 'REMD_PAW_CADASTER_KEY';
+    const ENV_PREFIX = 'REMD_PAW_CADASTER';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function reference($reference)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/1/reference/' . $reference, 
+            self::serviceSetting('ENDPOINT') . '/1/reference/' . $reference, 
             'GET', 
-            env(self::KEY)
+            self::serviceSetting('KEY')
         );
     }
 
@@ -23,9 +28,9 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/1/direct/queue/' . $reference, 
+            self::serviceSetting('ENDPOINT') . '/1/direct/queue/' . $reference, 
             'GET', 
-            env(self::KEY)
+            self::serviceSetting('KEY')
         );
     }
 
@@ -33,9 +38,9 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/1/direct/BuscarParcelaGoogle', 
+            self::serviceSetting('ENDPOINT') . '/1/direct/BuscarParcelaGoogle', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -44,9 +49,9 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/1/direct/Consulta_DNPRC', 
+            self::serviceSetting('ENDPOINT') . '/1/direct/Consulta_DNPRC', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -55,9 +60,9 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/1/direct/ConsultaRCCOOR_Distancia', 
+            self::serviceSetting('ENDPOINT') . '/1/direct/ConsultaRCCOOR_Distancia', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

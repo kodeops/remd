@@ -2,20 +2,25 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Static;
 
 class AVM
 {
-    const ENDPOINT = 'https://avm.atenea.cloud/api';
     const SERVICE = 'avm';
-    const KEY = 'REMD_PAW_AVM_KEY';
+    const ENV_PREFIX = 'REMD_PAW_AVM';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function asset(array $params)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/v1/asset', 
+            self::serviceSetting('ENDPOINT') . '/v1/asset', 
             'POST', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -24,9 +29,9 @@ class AVM
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/v1/queue', 
+            self::serviceSetting('ENDPOINT') . '/v1/queue', 
             'POST', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -35,9 +40,9 @@ class AVM
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/v2/value', 
+            self::serviceSetting('ENDPOINT') . '/v2/value', 
             'POST', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

@@ -2,20 +2,25 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Static;
 
 class Geolocation
 {
-    const ENDPOINT = 'https://geolocation.remd.tech/api';
     const SERVICE = 'geolocation';
-    const KEY = 'REMD_PAW_GEOLOCATION_KEY';
+    const ENV_PREFIX = 'REMD_PAW_GEOLOCATION';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function geocode(array $params)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/geocode', 
+            self::serviceSetting('ENDPOINT') . '/geocode', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -24,9 +29,9 @@ class Geolocation
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/reverse', 
+            self::serviceSetting('ENDPOINT') . '/reverse', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

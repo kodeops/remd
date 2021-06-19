@@ -2,20 +2,25 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Static;
 
 class Registry
 {
-    const ENDPOINT = 'https://registry-es.remd.tech/api/1';
     const SERVICE = 'registry';
-    const KEY = 'REMD_PAW_REGISTRY_KEY';
+    const ENV_PREFIX = 'REMD_PAW_REGISTRY';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function valuate(array $params)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/valuate', 
+            self::serviceSetting('ENDPOINT') . '/valuate', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }
@@ -24,9 +29,9 @@ class Registry
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/valuate/queue', 
+            self::serviceSetting('ENDPOINT') . '/valuate/queue', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

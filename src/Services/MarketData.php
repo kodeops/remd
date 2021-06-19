@@ -2,20 +2,25 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Static;
 
 class MarketData
 {
-    const ENDPOINT = 'https://comparables.remd.tech/api';
     const SERVICE = 'marketdata';
-    const KEY = 'REMD_PAW_MARKETDATA_KEY';
+    const ENV_PREFIX = 'REMD_PAW_MARKETDATA';
+
+    private static function serviceSetting($key)
+    {
+        return Static::serviceSetting(self::ENV_PREFIX, $key);
+    }
 
     public static function listings(array $params)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/search', 
+            self::serviceSetting('ENDPOINT') . '/search', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params,
             [
                 'Accept' => 'application/json',
@@ -28,9 +33,9 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/user', 
+            self::serviceSetting('ENDPOINT') . '/user', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             null,
             [
                 'Accept' => 'application/json',
@@ -43,9 +48,9 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/export', 
+            self::serviceSetting('ENDPOINT') . '/export', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params,
             [
                 'Accept' => 'application/json',
@@ -58,9 +63,9 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/history', 
+            self::serviceSetting('ENDPOINT') . '/history', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params,
             [
                 'Accept' => 'application/json',
@@ -74,6 +79,6 @@ class MarketData
         return success()
             ->type(\kodeops\remd\Request::DEFAULT_RESPONSE_TYPE)
             ->message(\kodeops\remd\Request::defaultResponseMessage(self::SERVICE))
-            ->data(['url' => self::ENDPOINT . '/chart/price-history.png?' . http_build_query($params)]);
+            ->data(['url' => self::serviceSetting('ENDPOINT') . '/chart/price-history.png?' . http_build_query($params)]);
     }
 }
