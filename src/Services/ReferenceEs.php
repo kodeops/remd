@@ -2,16 +2,15 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
-use kodeops\remd\Static;
+use kodeops\remd\Setting;
 
 class ReferenceEs
 {
     const SERVICE = 'referencees';
-    const ENV_PREFIX = 'REMD_PAW_REFERENCEES';
 
     private static function serviceSetting($key)
     {
-        return Static::serviceSetting(self::ENV_PREFIX, $key);
+        return Setting::get(self::SERVICE, $key);
     }
 
     public static function search(array $params)
