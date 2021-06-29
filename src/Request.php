@@ -18,11 +18,6 @@ class Request
         $headers = null
     )
     {
-        $check_env_key = 'REMD_PAW_' . strtoupper($service) . '_KEY';
-        if (!env($check_env_key)) {
-            throw new Exception('remd is missing ' . $check_env_key . ' enviroment');
-        }
-
         $request_params = [
             'headers' => [
                 'Authorization' => 'Bearer ' . $authorization,
