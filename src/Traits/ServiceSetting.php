@@ -3,7 +3,7 @@ namespace kodeops\remd\Traits;
 
 use kodeops\remd\Setting;
 
-class ServiceSetting
+Trait ServiceSetting
 {
     private static function serviceSetting($key)
     {
