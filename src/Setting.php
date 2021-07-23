@@ -1,7 +1,7 @@
 <?php
 namespace kodeops\remd;
 
-use kodeops\remd\Exceptions\RemdPawException;
+use kodeops\remd\Exceptions\RemdException;
 
 class Setting
 {
@@ -14,7 +14,7 @@ class Setting
         
         // Check that the environment key is set
         if (! env($env_key)) {
-            throw new RemdPawException("remd is missing {$env_key} enviroment");
+            throw new RemdException("remd is missing {$env_key} enviroment");
         }
 
         return env($env_key);

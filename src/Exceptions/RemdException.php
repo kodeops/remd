@@ -3,4 +3,4 @@ namespace kodeops\remd\Exceptions;
 
 use Exception;
 
-class RemdPawException extends Exception {}
+class RemdException extends Exception {}
