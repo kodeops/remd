@@ -43,7 +43,7 @@ or regular call:
 * Repository [remdtech/geolocation](https://bitbucket.org/remdtech/geolocation)
 * [API Documentation](https://bitbucket.org/remdtech/geolocation/src/master/README.md)
 
-Requires `REMD_PAW_GEOLOCATION_KEY` in `.env` environment file.
+Requires `REMD_GEOLOCATION_KEY` in `.env` environment file.
 
 `remd::api('Geolocation', 'geocode', $params);`
 
@@ -54,7 +54,7 @@ Requires `REMD_PAW_GEOLOCATION_KEY` in `.env` environment file.
 * Repository [remdtech/idealista-api-wrapper](https://bitbucket.org/remdtech/idealista-api-wrapper)
 * [API Documentation](https://bitbucket.org/remdtech/idealista-api-wrapper/src/master/README.md)
 
-Requires `REMD_PAW_IDEALISTA_KEY` in `.env` environment file.
+Requires `REMD_IDEALISTA_KEY` in `.env` environment file.
 
 `remd::api('Idealista', 'search', $params);`
 
@@ -63,7 +63,7 @@ Requires `REMD_PAW_IDEALISTA_KEY` in `.env` environment file.
 * Repository [remdtech/comparables-api](https://bitbucket.org/remdtech/comparables-api)
 * [API Documentation](https://bitbucket.org/remdtech/comparables-api/src/master/README.md)
 
-Requires `REMD_PAW_MARKETDATA_KEY` in `.env` environment file.
+Requires `REMD_MARKETDATA_KEY` in `.env` environment file.
 
 `remd::api('MarketData', 'listings', $params);`
 
@@ -80,7 +80,7 @@ Requires `REMD_PAW_MARKETDATA_KEY` in `.env` environment file.
 * Repository [remdtech/registry-es](https://bitbucket.org/remdtech/registry-es)
 * [API Documentation](https://bitbucket.org/remdtech/registry-es/src/master/README.md)
 
-Requires `REMD_PAW_REGISTRY_KEY` in `.env` environment file.
+Requires `REMD_REGISTRY_KEY` in `.env` environment file.
 
 `remd::api('Registry', 'valuate', $params);`
 
@@ -91,7 +91,7 @@ Requires `REMD_PAW_REGISTRY_KEY` in `.env` environment file.
 * Repository [remdtech/cadaster-es](https://bitbucket.org/remdtech/cadaster-es)
 * [API Documentation](https://bitbucket.org/remdtech/cadaster-es/src/master/README.md)
 
-Requires `REMD_PAW_CADASTER_KEY` in `.env` environment file.
+Requires `REMD_CADASTER_KEY` in `.env` environment file.
 
 `remd::api('Cadaster', 'reference', $reference);`
 
@@ -102,7 +102,7 @@ Requires `REMD_PAW_CADASTER_KEY` in `.env` environment file.
 * Repository [remdtech/reference-es](https://bitbucket.org/remdtech/reference-es)
 * [API Documentation](https://bitbucket.org/remdtech/reference-es/src/master/readme.md)
 
-Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
+Requires `REMD_REFERENCEES_KEY` in `.env` environment file.
 
 `remd::api('ReferenceEs', 'search', $params);`
 
@@ -111,7 +111,7 @@ Requires `REMD_PAW_REFERENCEES_KEY` in `.env` environment file.
 * Repository [remdtech/reference-es](https://bitbucket.org/remdtech/static-street-view)
 * [API Documentation](https://bitbucket.org/remdtech/static-street-view/src/master/README.md)
 
-Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
+Requires `REMD_SSV_KEY` in `.env` environment file.
 
 `remd::api('StaticStreetView', 'streetview', $params);`
 
@@ -120,7 +120,7 @@ Requires `REMD_PAW_SSV_KEY` in `.env` environment file.
 * Repository [remdtech/rent-price-index-cat](https://bitbucket.org/remdtech/rent-price-index-cat)
 * [API Documentation](https://bitbucket.org/remdtech/rent-price-index-cat/src/master/README.md)
 
-Requires `REMD_PAW_RPIC_KEY` in `.env` environment file.
+Requires `REMD_RPIC_KEY` in `.env` environment file.
 
 `remd::api('RentPriceIndexCat', 'rentPriceIndex', $params);`
 
@@ -129,6 +129,6 @@ Requires `REMD_PAW_RPIC_KEY` in `.env` environment file.
 * Repository [remdtech/pois](https://bitbucket.org/remdtech/pois)
 * [API Documentation](https://bitbucket.org/remdtech/pois/src/master/README.md)
 
-Requires `REMD_PAW_POIS_KEY` in `.env` environment file.
+Requires `REMD_POIS_KEY` in `.env` environment file.
 
 `remd::api('Pois', 'nearbyPoints', $params);`
