@@ -14,7 +14,7 @@ class Idealista
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/v1/search', 
+            self::serviceSetting('ENDPOINT') . '/api/v1/search', 
             'POST', 
             self::serviceSetting('KEY'),
             $params

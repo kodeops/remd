@@ -14,7 +14,7 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/search', 
+            self::serviceSetting('ENDPOINT') . '/api/search', 
             'GET', 
             self::serviceSetting('KEY'),
             $params,
@@ -29,7 +29,7 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/user', 
+            self::serviceSetting('ENDPOINT') . '/api/user', 
             'GET', 
             self::serviceSetting('KEY'),
             null,
@@ -44,7 +44,7 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/export', 
+            self::serviceSetting('ENDPOINT') . '/api/export', 
             'GET', 
             self::serviceSetting('KEY'),
             $params,
@@ -59,7 +59,7 @@ class MarketData
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/history', 
+            self::serviceSetting('ENDPOINT') . '/api/history', 
             'GET', 
             self::serviceSetting('KEY'),
             $params,

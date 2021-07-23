@@ -14,7 +14,7 @@ class Geolocation
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/geocode', 
+            self::serviceSetting('ENDPOINT') . '/api/geocode', 
             'GET', 
             self::serviceSetting('KEY'),
             $params
@@ -25,7 +25,7 @@ class Geolocation
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/reverse', 
+            self::serviceSetting('ENDPOINT') . '/api/reverse', 
             'GET', 
             self::serviceSetting('KEY'),
             $params

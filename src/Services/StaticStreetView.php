@@ -14,7 +14,7 @@ class StaticStreetView
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/streetview', 
+            self::serviceSetting('ENDPOINT') . '/api/streetview', 
             'GET', 
             self::serviceSetting('KEY'),
             $params

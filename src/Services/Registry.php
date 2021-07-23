@@ -14,10 +14,11 @@ class Registry
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/valuate', 
+            self::serviceSetting('ENDPOINT') . '/api/1/valuate', 
             'GET', 
             self::serviceSetting('KEY'),
-            $params
+            $params,
+            ['Content-Type' => 'application/json']
         );
     }
 
@@ -25,10 +26,11 @@ class Registry
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/valuate/queue', 
+            self::serviceSetting('ENDPOINT') . '/api/1/valuate/queue', 
             'GET', 
             self::serviceSetting('KEY'),
-            $params
+            $params,
+            ['Content-Type' => 'application/json']
         );
     }
 }

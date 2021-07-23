@@ -14,7 +14,7 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/1/reference/' . $reference, 
+            self::serviceSetting('ENDPOINT') . '/api/1/reference/' . $reference, 
             'GET', 
             self::serviceSetting('KEY')
         );
@@ -24,7 +24,7 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/1/direct/queue/' . $reference, 
+            self::serviceSetting('ENDPOINT') . '/api/1/direct/queue/' . $reference, 
             'GET', 
             self::serviceSetting('KEY')
         );
@@ -34,7 +34,7 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/1/direct/BuscarParcelaGoogle', 
+            self::serviceSetting('ENDPOINT') . '/api/1/direct/BuscarParcelaGoogle', 
             'GET', 
             self::serviceSetting('KEY'),
             $params
@@ -45,7 +45,7 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/1/direct/Consulta_DNPRC', 
+            self::serviceSetting('ENDPOINT') . '/api/1/direct/Consulta_DNPRC', 
             'GET', 
             self::serviceSetting('KEY'),
             $params
@@ -56,7 +56,7 @@ class Cadaster
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/1/direct/ConsultaRCCOOR_Distancia', 
+            self::serviceSetting('ENDPOINT') . '/api/1/direct/ConsultaRCCOOR_Distancia', 
             'GET', 
             self::serviceSetting('KEY'),
             $params
