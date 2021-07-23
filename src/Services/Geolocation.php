@@ -2,16 +2,13 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
-use kodeops\remd\Setting;
+use kodeops\remd\Traits\ServiceSetting;
 
 class Geolocation
 {
-    const SERVICE = 'geolocation';
+    use ServiceSetting;
 
-    private static function serviceSetting($key)
-    {
-        return Setting::get(self::SERVICE, $key);
-    }
+    const SERVICE = 'geolocation';
 
     public static function geocode(array $params)
     {

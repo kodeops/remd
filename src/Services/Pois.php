@@ -2,20 +2,21 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Traits\ServiceSetting;
 
 class Pois
 {
-    const ENDPOINT = 'https://pois.remd.tech/api';
+    use ServiceSetting;
+
     const SERVICE = 'pois';
-    const KEY = 'REMD_PAW_POIS_KEY';
 
     public static function nearbyPoints(array $params)
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/nearby-points', 
+            self::serviceSetting('ENDPOINT') . '/nearby-points', 
             'GET', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params
         );
     }

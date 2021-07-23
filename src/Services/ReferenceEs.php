@@ -2,10 +2,12 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
-use kodeops\remd\Setting;
+use kodeops\remd\Traits\ServiceSetting;
 
 class ReferenceEs
 {
+    use ServiceSetting;
+
     const SERVICE = 'referencees';
 
     private static function serviceSetting($key)

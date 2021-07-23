@@ -2,6 +2,7 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
+use kodeops\remd\Traits\ServiceSetting;
 
 class RentPriceIndexCat
 {
@@ -13,9 +14,9 @@ class RentPriceIndexCat
     {
         return Request::do(
             self::SERVICE,
-            self::ENDPOINT . '/rent-price-index', 
+            self::serviceSetting('ENDPOINT') . '/rent-price-index', 
             'POST', 
-            env(self::KEY),
+            self::serviceSetting('KEY'),
             $params,
             ['Accept' => 'application/json']
         );

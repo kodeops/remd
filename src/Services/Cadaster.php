@@ -2,16 +2,13 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
-use kodeops\remd\Setting;
+use kodeops\remd\Traits\ServiceSetting;
 
 class Cadaster
 {
+    use ServiceSetting;
+    
     const SERVICE = 'cadaster';
-
-    private static function serviceSetting($key)
-    {
-        return Setting::get(self::SERVICE, $key);
-    }
 
     public static function reference($reference)
     {

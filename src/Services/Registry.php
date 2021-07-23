@@ -2,16 +2,13 @@
 namespace kodeops\remd\Services;
 
 use kodeops\remd\Request;
-use kodeops\remd\Setting;
+use kodeops\remd\Traits\ServiceSetting;
 
 class Registry
 {
-    const SERVICE = 'registry';
+    use ServiceSetting;
 
-    private static function serviceSetting($key)
-    {
-        return Setting::get(self::SERVICE, $key);
-    }
+    const SERVICE = 'registry';
 
     public static function valuate(array $params)
     {
