@@ -10,18 +10,13 @@ class ReferenceEs
 
     const SERVICE = 'referencees';
 
-    private static function serviceSetting($key)
-    {
-        return Setting::get(self::SERVICE, $key);
-    }
-
     public static function search(array $params)
     {
         $params = array_merge($params, ['rro' => 1]);
 
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/search', 
+            self::serviceSetting('ENDPOINT') . '/api/search', 
             'GET', 
             self::serviceSetting('KEY'),
             $params
@@ -32,7 +27,7 @@ class ReferenceEs
     {
         return Request::do(
             self::SERVICE,
-            self::serviceSetting('ENDPOINT') . '/ine', 
+            self::serviceSetting('ENDPOINT') . '/api/ine', 
             'GET', 
             self::serviceSetting('KEY'),
             $params
