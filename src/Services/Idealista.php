@@ -20,4 +20,15 @@ class Idealista
             $params
         );
     }
+
+    public static function searchMerge(array $params)
+    {
+        return Request::do(
+            self::SERVICE,
+            self::serviceSetting('ENDPOINT') . '/api/v1/search-merge', 
+            'POST', 
+            self::serviceSetting('KEY'),
+            $params
+        );
+    }
 }
